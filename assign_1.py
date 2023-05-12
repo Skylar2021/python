@@ -35,19 +35,23 @@ else:
 
 # print("Section C#2")
 num = int(input("enter a natural number which is greater than 3: "))
-isPrime = True
-r = 0
-while isPrime:
-    r = num
-    for i in range(2, num + 1): 
-        if i == 2:
-            print(f"The factors of {num} are [", end="")
+isNotPrime = True
+r = num
+while isNotPrime:
+    if r == num :
+        print(f"The factors of {num} are [", end="")
+    elif r // i == 0:
+        isNotPrime = False
+        print(" ]", end="")
+    else:
+        print(" ,", end="")
+    for i in range(2, num // 2 + 1): 
         if r % i == 0:
-            print(f"{i}")
-            print(f"b4 r = {r}")
+            print(i, end="")
+            # print(f"b4 r = {r}")
             r = r // i
-            isPrime = False
-            print(f"after r = {r}")
             break
-
+    # if r // i == 0:
+    #     isNotPrime = False
+    #     print(" ]", end="")
 
